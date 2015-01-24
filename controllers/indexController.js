@@ -3,11 +3,12 @@
 angular
 .module('turboRangular')
 .controller('IndexController', function($scope) {
-  $scope.cabecalho = "Hello World";
+  $scope.cabecalho = "TurboRangular";
   $scope.itensMenu = [
-    { texto: 'Restaurantes', href: "/restaurantes", ativo: true },
-    { texto: 'Rodar testes', ativo: false }
+    { texto: 'Restaurantes', href: "#/restaurantes", ativo: true },
+    { texto: 'Rodar testes', href: "/specs.html", ativo: true }
   ];
+  $scope.anoRodape = new Date().getFullYear();
 });
 
 /*
