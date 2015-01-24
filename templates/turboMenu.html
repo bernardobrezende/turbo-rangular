@@ -1,0 +1,21 @@
+<!-- filter -->
+<ul>
+  <li ng-repeat="item in itensMenu | filter: { ativo: true }">
+    <a ng-href="{{ ::item.href }}">{{ ::item.texto }}</a>
+  </li>
+</ul>
+
+<!-- ng-show / ng-hide  -->
+<!--<ul>
+  <li ng-repeat="item in itensMenu" ng-show="item.ativo">
+    <a ng-href="{{ ::item.href }}">{{ ::item.texto }}</a>
+  </li>
+</ul>-->
+
+<!-- ng-if -->
+<!--<ul>
+  <li ng-repeat="item in itensMenu" ng-if="item.ativo">
+    <a ng-href="{{ ::item.href }}">{{ ::item.texto }}</a>
+  </li>
+</ul>
+-->

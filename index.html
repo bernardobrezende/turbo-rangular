@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="turboRangular">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  </head>
+  <body ng-controller="IndexController">
+    <!--[if lt IE 9]>
+    <p>Atualize seu navegador, por favor!! <a href="http://browsehappy.com/">http://browsehappy.com</a></p>
+    <![endif]-->
+    
+    <h1>{{ ::cabecalho }}</h1>
+    
+    <turbo-menu itens-menu="itensMenu"></turbo-menu>
+    
+    <script 
+      data-require="angular.js@1.3.10"
+      data-semver="1.3.10"
+      src="https://code.angularjs.org/1.3.10/angular.js"></script>
+    
+    <script>
+      angular.module('turboRangular', []);
+    </script>
+    
+    <script src="controllers/indexController.js"></script>
+    <script src="directives/turboMenu.js"></script>
+  </body>
+</html>
