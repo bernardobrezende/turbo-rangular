@@ -1,0 +1,33 @@
+header, footer {
+  position: fixed;
+}
+
+header: {
+  top: 0px;
+}
+
+footer {
+  bottom: 20px;
+}
+
+section[ng-view] {
+  position: absolute;
+  top: 170px;
+}
+
+.label-campo {
+  display: block;
+  padding: 10px;
+}
+
+form {
+  width: 300px;
+}
+
+form input {
+  float: right;
+}
+
+.required-asterisk {
+  color: red;
+}

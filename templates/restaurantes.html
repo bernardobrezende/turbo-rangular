@@ -1,0 +1,58 @@
+<h3>Cadastro de restaurantes</h3>
+
+<form name="formCadastroRestaurante" ng-submit="cadastrar(restaurante)">
+  <div class="label-campo">
+    Nome
+    <!--<asterisco-obrigatorio ng-show=""></asterisco-obrigatorio>-->
+    <span class="required-asterisk" ng-show="formCadastroRestaurante.nome.$error.required">*</span>
+    <span class="required-asterisk" ng-show="formCadastroRestaurante.nome.$pending">loading...</span>
+    <span class="required-asterisk"
+          ng-show="formCadastroRestaurante.nome.$invalid && formCadastroRestaurante.nome.$dirty">INVALIDO!</span>
+    <input name="nome" type="text" ng-model="restaurante.nome" required nome-validador>
+  </div>
+  <div class="label-campo">
+    Latitude
+    <span class="required-asterisk" ng-show="formCadastroRestaurante.latitude.$error.required">*</span>
+    <input name="latitude" type="text" ng-model="restaurante.latitude" required>
+  </div>
+  <div class="label-campo">
+    Longitude
+    <span class="required-asterisk" ng-show="formCadastroRestaurante.longitude.$error.required">*</span>
+    <input name="longitude" type="text" ng-model="restaurante.longitude" required>
+  </div>
+  
+  <input type="submit" value="Cadastrar"
+    ng-disabled="formCadastroRestaurante.$invalid || formCadastroRestaurante.$pending">
+</form>
+
+<div class="label-campo">
+  Procurar:
+  <input type="text" ng-model="busca">
+</div>
+
+<table>
+  <thead>
+    <th>Nome</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+  </thead>
+  
+  <tfoot>
+    <tr>
+      <td>
+        Total: {{ restaurantes.length }}
+      </td>
+    </tr>
+  </tfoot>
+  
+  <tbody>
+    <tr ng-repeat="restaurante in restaurantes | filter: busca | orderBy: '-nome' ">
+      <td>{{ ::restaurante.nome }}</td>
+      <td>{{ ::restaurante.latitude | number: 2 }}</td>
+      <td>{{ ::restaurante.longitude | number: 2 }}</td>
+      <td>
+        <button ng-click="remover(restaurante)">Remover</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
